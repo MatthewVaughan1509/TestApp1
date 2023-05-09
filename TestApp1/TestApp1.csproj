@@ -246,6 +246,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataModel\DataModel.csproj">
+      <Project>{63EF8309-5A84-4A02-9CE7-352F3E770FB2}</Project>
+      <Name>DataModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Service\Service.csproj">
       <Project>{dff7725c-0c92-4461-b66d-78f37df37b7e}</Project>
       <Name>Service</Name>

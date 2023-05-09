@@ -8,7 +8,6 @@ namespace TestApp1.Pages
     public partial class PersonDetails : System.Web.UI.Page
     {
         private IPersonService _personService;
-        protected List<DateTime> _gridDataSource;
 
         public PersonDetails()
         {
@@ -28,12 +27,19 @@ namespace TestApp1.Pages
             {
                 Age.Text = _personService.GetAgeOfPerson(birthday).ToString();
                 DaysTillNextBirthday.Text = _personService.DaysTillNextBirthday(birthday).ToString();
-                _gridDataSource = _personService.GetAllDatesToNextBirthday(birthday);
+                PersonGridView.DataSource = _personService.GetAllDatesToNextBirthday(birthday);
+                PersonGridView.DataBind();
             }
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
+        }
+
+        protected void PersonGridView_PageIndexChanging(object sender, System.Web.UI.WebControls.GridViewPageEventArgs e)
+        {            
+            PersonGridView.PageIndex = e.NewPageIndex;
+            PersonGridView.DataBind();
         }
     }
 }

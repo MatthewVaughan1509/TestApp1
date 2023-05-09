@@ -8,13 +8,7 @@ namespace DataModel.Domain.Custom
     /// </summary>
     public class PersonQuery
     {
-        public PersonQuery()
-        {
-            LinksToWebsiteByDate = new Dictionary<DateTime, string>();
-        }
-        int Id { get; set; }
-        string FirstName { get; set; }
-        int NumberOfVowlesInFirstName { get; set; }
-        Dictionary<DateTime, string> LinksToWebsiteByDate { get; set; }
+        public DateTime Date { get; set; }
+        public String Url { get; set; }
     }
 }

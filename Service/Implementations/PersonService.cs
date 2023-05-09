@@ -89,17 +89,17 @@ namespace Service.Implementations
         /// <param name="birthday"></param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        public List<DateTime> GetAllDatesToNextBirthday(DateTime birthday)
+        public List<PersonQuery> GetAllDatesToNextBirthday(DateTime birthday)
         {
-            List<DateTime> dates = new List<DateTime>();
+            var results = new List<PersonQuery>();
             var nextBirthday = GetNextBirthday(birthday);
             var date = DateTime.Today;
             while (date <= nextBirthday)
             {
-                dates.Add(date);
+                results.Add(new PersonQuery() { Date = date, Url = $"https://www.historynet.com/today-in-history/{date.ToString("MMM")}-{date.Day}" });
                 date = date.AddDays(1);
             }
-            return dates;
+            return results;
         }
     }
 }

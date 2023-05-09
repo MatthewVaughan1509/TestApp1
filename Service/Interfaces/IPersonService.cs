@@ -11,6 +11,6 @@ namespace Service.Interfaces
         int NumberOfVowles(string str);
         int DaysTillNextBirthday(DateTime birthday);
         int GetAgeOfPerson(DateTime birthday);
-        List<DateTime> GetAllDatesToNextBirthday(DateTime birthday);
+        List<PersonQuery> GetAllDatesToNextBirthday(DateTime birthday);
     }
 }

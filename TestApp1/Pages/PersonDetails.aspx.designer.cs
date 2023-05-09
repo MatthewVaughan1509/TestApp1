@@ -58,5 +58,14 @@ namespace TestApp1.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox DaysTillNextBirthday;
+
+        /// <summary>
+        /// PersonGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView PersonGridView;
     }
 }

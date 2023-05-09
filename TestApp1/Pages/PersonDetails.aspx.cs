@@ -1,18 +1,17 @@
-﻿using Service.Implementations; // Remove me.
+﻿using Ninject;
 using Service.Interfaces;
 using System;
-using System.Collections.Generic;
 
 namespace TestApp1.Pages
 {
     public partial class PersonDetails : System.Web.UI.Page
     {
-        private IPersonService _personService;
 
-        public PersonDetails()
-        {
-            _personService = new PersonService();
-        }
+        /// <summary>
+        /// Ninject provides this service. See NinjectWebCommon.cs for details.
+        /// </summary>
+        [Inject]
+        public IPersonService _personService { get; set; }
 
         protected void Page_Init(object sender, EventArgs e)
         {

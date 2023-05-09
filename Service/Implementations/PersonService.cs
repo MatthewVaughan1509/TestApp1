@@ -96,7 +96,7 @@ namespace Service.Implementations
             var date = DateTime.Today;
             while (date <= nextBirthday)
             {
-                results.Add(new PersonQuery() { Date = date, Url = $"https://www.historynet.com/today-in-history/{date.ToString("MMM")}-{date.Day}" });
+                results.Add(new PersonQuery() { Date = date, Url = $"https://www.historynet.com/today-in-history/{date.ToString("MMMM")}-{date.Day}" });
                 date = date.AddDays(1);
             }
             return results;

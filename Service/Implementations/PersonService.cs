@@ -2,9 +2,14 @@
 using DataModel.Domain.Custom;
 using Service.Interfaces;
 using System;
+using System.Collections.Generic;
 
 namespace Service.Implementations
 {
+    /// <summary>
+    /// This is the implementation of a ervice class. These are used extensiveley in my present role.
+    /// Business logic goes here and they implement separation of concernes.
+    /// </summary>
     public class PersonService : IPersonService
     {
         private static readonly string _lowerCaseVowles = "aeiou";
@@ -75,6 +80,26 @@ namespace Service.Implementations
             }
 
             return vowelCount;
+        }
+
+        /// <summary>
+        /// This method will return a collection of date time values. One entry for each date between now and the next birthday.
+        /// This method includes the current date in the result collection.
+        /// </summary>
+        /// <param name="birthday"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public List<DateTime> GetAllDatesToNextBirthday(DateTime birthday)
+        {
+            List<DateTime> dates = new List<DateTime>();
+            var nextBirthday = GetNextBirthday(birthday);
+            var date = DateTime.Today;
+            while (date <= nextBirthday)
+            {
+                dates.Add(date);
+                date = date.AddDays(1);
+            }
+            return dates;
         }
     }
 }

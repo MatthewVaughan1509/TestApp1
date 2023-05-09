@@ -1,6 +1,7 @@
 ﻿using DataModel.Domain;
 using DataModel.Domain.Custom;
 using System;
+using System.Collections.Generic;
 
 namespace Service.Interfaces
 {
@@ -10,5 +11,6 @@ namespace Service.Interfaces
         int NumberOfVowles(string str);
         int DaysTillNextBirthday(DateTime birthday);
         int GetAgeOfPerson(DateTime birthday);
+        List<DateTime> GetAllDatesToNextBirthday(DateTime birthday);
     }
 }

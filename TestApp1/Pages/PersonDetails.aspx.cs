@@ -1,12 +1,14 @@
 ﻿using Service.Implementations; // Remove me.
 using Service.Interfaces;
 using System;
+using System.Collections.Generic;
 
 namespace TestApp1.Pages
 {
     public partial class PersonDetails : System.Web.UI.Page
     {
         private IPersonService _personService;
+        protected List<DateTime> _gridDataSource;
 
         public PersonDetails()
         {
@@ -26,6 +28,7 @@ namespace TestApp1.Pages
             {
                 Age.Text = _personService.GetAgeOfPerson(birthday).ToString();
                 DaysTillNextBirthday.Text = _personService.DaysTillNextBirthday(birthday).ToString();
+                _gridDataSource = _personService.GetAllDatesToNextBirthday(birthday);
             }
         }
 

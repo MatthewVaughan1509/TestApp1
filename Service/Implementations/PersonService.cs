@@ -71,6 +71,8 @@ namespace Service.Implementations
             if (str == null)
                 return 0;
 
+            str = str.ToLower();
+
             var vowelCount = 0;
 
             for (var i = 0; i < str.Length; i++)
